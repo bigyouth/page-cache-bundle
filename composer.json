@@ -1,0 +1,26 @@
+{
+    "name": "bigyouth/page-cache-bundle",
+    "license": "Bigyouth",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Alexis Smadja",
+            "email": "alexis.smadja@bigyouth.fr"
+        }
+    ],
+    "require": {
+        "php": "^5.3.9|^7.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Bigyouth\\BigyouthPageCacheBundle": ""
+        }
+    },
+    "minimum-stability": "dev",
+    "target-dir": "Bigyouth/BigyouthPageCacheBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "master"
+        }
+    }
+}

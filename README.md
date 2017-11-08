@@ -1,0 +1,2 @@
+Installation Page Cache Bundle
+-----------------
