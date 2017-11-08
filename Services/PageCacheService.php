@@ -41,16 +41,23 @@ class PageCacheService
     protected $exclude = [];
 
     /**
+     * @var string
+     */
+    protected $type = 'filesystem';
+
+    /**
      * PageCacheService constructor.
      * @param $enabled
      * @param $ttl
      * @param array $exclude
+     * @param $type
      */
-    public function __construct($enabled, $ttl, array $exclude)
+    public function __construct($enabled, $ttl, array $exclude, $type)
     {
         $this->enabled = $enabled;
         $this->ttl     = $ttl;
         $this->exclude = $exclude;
+        $this->type    = $type;
         $this->setAdapter();
     }
 
@@ -59,24 +66,26 @@ class PageCacheService
      */
     public function setAdapter()
     {
-        /*
-        $redisConnection = RedisAdapter::createConnection('redis://localhost');
-        $redisAdapter    = new RedisAdapter(
-            $redisConnection,
-            $namespace = '',
-            $defaultLifetime = $this->ttl
-        );
+        switch ($this->type) {
+            case 'redis':
+                $redisConnection = RedisAdapter::createConnection('redis://localhost');
+                $adapter         = new RedisAdapter(
+                    $redisConnection,
+                    $namespace = '',
+                    $defaultLifetime = $this->ttl
+                );
+                break;
+            case 'filesystem':
+            default:
+                $adapter = new FilesystemAdapter(
+                    $namespace = '',
+                    $defaultLifetime = $this->ttl,
+                    $directory = null
+                );
+                break;
+        }
 
-        $this->cacheAdapter = new TagAwareAdapter($redisAdapter);
-        */
-
-        $fsAdapter = new FilesystemAdapter(
-            $namespace = '',
-            $defaultLifetime = $this->ttl,
-            $directory = null
-        );
-
-        $this->cacheAdapter = new TagAwareAdapter($fsAdapter);
+        $this->cacheAdapter = new TagAwareAdapter($adapter);
     }
 
     /**

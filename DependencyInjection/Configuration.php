@@ -27,6 +27,7 @@ class Configuration implements ConfigurationInterface
                     ->children()
                         ->booleanNode('enabled')->end()
                         ->integerNode('ttl')->end()
+                        ->scalarNode('type')->end()
                         ->arrayNode('exclude')
                             ->prototype('scalar')->end()
                         ->end()

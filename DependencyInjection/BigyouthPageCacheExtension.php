@@ -47,7 +47,8 @@ class BigyouthPageCacheExtension extends Extension
         $pageCacheServiceArguments = array(
             'enabled' => $default['enabled'],
             'ttl'     => $default['ttl'],
-            'exclude' => $default['exclude']
+            'exclude' => $default['exclude'],
+            'type'    => $default['type']
         );
         $pageCacheService->setArguments($pageCacheServiceArguments);
         $managerId = 'by.page_cache';
