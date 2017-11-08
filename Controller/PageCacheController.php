@@ -7,9 +7,9 @@
  * @author Alexis Smadja <alexis.smadja@bigyouth.fr>
  */
 
-namespace BigyouthPageCacheBundle\Controller;
+namespace Bigyouth\BigyouthPageCacheBundle\Controller;
 
-use BigyouthPageCacheBundle\Services\PageCacheService;
+use Bigyouth\BigyouthPageCacheBundle\Services\PageCacheService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Cache\Adapter\TagAwareAdapter;
 use Symfony\Component\HttpFoundation\Response;

@@ -6,7 +6,7 @@
  * @author Alexis Smadja <alexis.smadja@bigyouth.fr>
  */
 
-namespace BigyouthPageCacheBundle\Services;
+namespace Bigyouth\BigyouthPageCacheBundle\Services;
 
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\Cache\Adapter\RedisAdapter;

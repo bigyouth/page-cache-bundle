@@ -6,9 +6,9 @@
  * @author Alexis Smadja <alexis.smadja@bigyouth.fr>
  */
 
-namespace BigyouthPageCacheBundle\Listener;
+namespace Bigyouth\BigyouthPageCacheBundle\Listener;
 
-use BigyouthPageCacheBundle\Services\PageCacheService;
+use Bigyouth\BigyouthPageCacheBundle\Services\PageCacheService;
 use Symfony\Component\Cache\Adapter\TagAwareAdapter;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
