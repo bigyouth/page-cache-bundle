@@ -1,6 +1,6 @@
 services:
     by.page_cache.listener:
-        class: Bigyouth\BigyouthPageCacheBundle\Listener\PageCacheListener
-        arguments:  [@by.page_cache, @security.token_storage]
+        class: "Bigyouth\\BigyouthPageCacheBundle\\Listener\\PageCacheListener"
+        arguments: ["@by.page_cache", "@security.token_storage"]
         tags:
             -  { name: kernel.event_subscriber }
