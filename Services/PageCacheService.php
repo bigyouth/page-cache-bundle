@@ -46,18 +46,25 @@ class PageCacheService
     protected $type = 'filesystem';
 
     /**
+     * @var string
+     */
+    protected $cacheDir;
+
+    /**
      * PageCacheService constructor.
      * @param $enabled
      * @param $ttl
      * @param array $exclude
      * @param $type
+     * @param $cacheDir
      */
-    public function __construct($enabled, $ttl, array $exclude, $type)
+    public function __construct($enabled, $ttl, array $exclude, $type, $cacheDir)
     {
-        $this->enabled = $enabled;
-        $this->ttl     = $ttl;
-        $this->exclude = $exclude;
-        $this->type    = $type;
+        $this->enabled  = $enabled;
+        $this->ttl      = $ttl;
+        $this->exclude  = $exclude;
+        $this->type     = $type;
+        $this->cacheDir = $cacheDir;
         $this->setAdapter();
     }
 
@@ -80,7 +87,7 @@ class PageCacheService
                 $adapter = new FilesystemAdapter(
                     $namespace = '',
                     $defaultLifetime = $this->ttl,
-                    $directory = null
+                    $directory = $this->cacheDir
                 );
                 break;
         }
