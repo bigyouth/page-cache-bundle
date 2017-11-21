@@ -30,8 +30,7 @@ class BigyouthPageCacheExtension extends Extension
 
     private function buildComponents($config, ContainerBuilder $container)
     {
-        $cacheService = $this->buildService($config, $container);
-        //$this->buildListener($cacheService, $container);
+        $this->buildService($config, $container);
     }
 
     /**
@@ -58,24 +57,5 @@ class BigyouthPageCacheExtension extends Extension
         $service = $container->setDefinition($managerId, $pageCacheService);
 
         return $service;
-    }
-
-    /**
-     * @param $cacheService
-     * @param ContainerBuilder $container
-     */
-    private function buildListener($cacheService, ContainerBuilder $container)
-    {
-        $pageCacheListener = new Definition(PageCacheListener::class);
-
-        $managerId = 'by.page_cache.listener';
-        $pageCacheListener->setPublic(true);
-        $pageCacheListener->addTag('kernel.event_subscriber');
-        $pageCacheListener->setArguments([
-            'tokenStorage' => TokenStorage::class,
-            'cacheService' => $cacheService
-        ]);
-
-        $container->setDefinition($managerId, $pageCacheListener);
     }
 }
