@@ -4,8 +4,42 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa8c418e97352b964ddf56064fc84fd1",
+    "content-hash": "a9f68429aea28348e0f17699b2cc81b5",
     "packages": [
+        {
+            "name": "bigyouth/core-bundle",
+            "version": "dev-master",
+            "target-dir": "Bigyouth/CoreBundle",
+            "source": {
+                "type": "git",
+                "url": "git@bigyouth.git.beanstalkapp.com:/bigyouth/by-core-bundle.git",
+                "reference": "e63d020db5facb694f1ce97639d63dda636ba203"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "project",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "master"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Bigyouth\\CoreBundle": ""
+                }
+            },
+            "license": [
+                "Bigyouth"
+            ],
+            "authors": [
+                {
+                    "name": "Adrien Jerphagnon",
+                    "email": "adrien.jerphagnon@bigyouth.fr"
+                }
+            ],
+            "time": "2017-09-06T10:17:07+00:00"
+        },
         {
             "name": "psr/cache",
             "version": "dev-master",
@@ -277,7 +311,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "bigyouth/core-bundle": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

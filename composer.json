@@ -10,8 +10,15 @@
     ],
     "require": {
         "php": "^5.3.9|^7.0",
-        "symfony/cache": "^3.1"
+        "symfony/cache": "^3.1",
+        "bigyouth/core-bundle": "dev-master"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@bigyouth.git.beanstalkapp.com:/bigyouth/by-core-bundle.git"
+        }
+    ],
     "autoload": {
         "psr-0": {
             "Bigyouth\\BigyouthPageCacheBundle": ""
