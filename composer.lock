@@ -13,7 +13,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bigyouth.git.beanstalkapp.com:/bigyouth/by-image-resizer-bundle.git",
-                "reference": "87b2d37e8233aa16deecd25bf60391ae4af59e88"
+                "reference": "cd5b5a6326d0dd5265199a4268e5e701aa2960ea"
             },
             "require": {
                 "liip/imagine-bundle": "^1.8",
@@ -39,7 +39,7 @@
                     "email": "alexis.smadja@bigyouth.fr"
                 }
             ],
-            "time": "2017-11-20T09:36:38+00:00"
+            "time": "2017-11-21T10:23:53+00:00"
         },
         {
             "name": "imagine/imagine",
