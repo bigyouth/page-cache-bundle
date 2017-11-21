@@ -10,15 +10,8 @@
     ],
     "require": {
         "php": "^5.3.9|^7.0",
-        "symfony/cache": "^3.1",
-        "bigyouth/image-resizer-bundle": "dev-master"
+        "symfony/cache": "^3.1"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@bigyouth.git.beanstalkapp.com:/bigyouth/by-image-resizer-bundle.git"
-        }
-    ],
     "autoload": {
         "psr-0": {
             "Bigyouth\\BigyouthPageCacheBundle": ""
