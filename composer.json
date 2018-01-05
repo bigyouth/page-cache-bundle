@@ -11,7 +11,7 @@
     "require": {
         "php": "^5.3.9|^7.0",
         "symfony/cache": "^3.1",
-        "bigyouth/core-bundle": "dev-master"
+        "bigyouth/core-bundle": "^0.0.1"
     },
     "repositories": [
         {
