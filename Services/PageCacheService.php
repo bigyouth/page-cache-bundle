@@ -48,6 +48,16 @@ class PageCacheService
     /**
      * @var string
      */
+    protected $redis_host;
+
+    /**
+     * @var string
+     */
+    protected $redis_port;
+
+    /**
+     * @var string
+     */
     protected $cacheDir;
 
     /**
@@ -56,15 +66,19 @@ class PageCacheService
      * @param $ttl
      * @param array $exclude
      * @param $type
+     * @param $redis_host
+     * @param $redis_port
      * @param $cacheDir
      */
-    public function __construct($enabled, $ttl, array $exclude, $type, $cacheDir)
+    public function __construct($enabled, $ttl, array $exclude, $type, $redis_host, $redis_port, $cacheDir)
     {
-        $this->enabled  = $enabled;
-        $this->ttl      = $ttl;
-        $this->exclude  = $exclude;
-        $this->type     = $type;
-        $this->cacheDir = $cacheDir;
+        $this->enabled    = $enabled;
+        $this->ttl        = $ttl;
+        $this->exclude    = $exclude;
+        $this->type       = $type;
+        $this->redis_host = $redis_host;
+        $this->redis_port = $redis_port;
+        $this->cacheDir   = $cacheDir;
         $this->setAdapter();
     }
 
@@ -75,17 +89,17 @@ class PageCacheService
     {
         switch ($this->type) {
             case 'redis':
-                $redisConnection = RedisAdapter::createConnection('redis://localhost');
+                $redisConnection = RedisAdapter::createConnection('redis://'. $this->redis_host . ':' . $this->redis_port);
                 $adapter         = new RedisAdapter(
                     $redisConnection,
-                    $namespace = '',
+                    $namespace = 'bigyouth',
                     $defaultLifetime = $this->ttl
                 );
                 break;
             case 'filesystem':
             default:
                 $adapter = new FilesystemAdapter(
-                    $namespace = '',
+                    $namespace = 'bigyouth',
                     $defaultLifetime = $this->ttl,
                     $directory = $this->cacheDir
                 );
