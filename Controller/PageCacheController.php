@@ -54,7 +54,10 @@ class PageCacheController extends Controller
 
         $view = parent::renderView($view, $parameters);
 
-        $data->expiresAfter($this->cacheService->getTtl());
+        $highLimit = $this->cacheService->getTtl() + (0.05 * $this->cacheService->getTtl());
+        $lowLimit  = $this->cacheService->getTtl() - (0.05 * $this->cacheService->getTtl());
+
+        $data->expiresAfter(rand($highLimit, $lowLimit));
         $data->set($view);
         $data->tag($this->cacheService->getTags($request->getPathInfo()));
         $cache->save($data);

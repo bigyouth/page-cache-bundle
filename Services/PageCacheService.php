@@ -28,7 +28,7 @@ class PageCacheService
     /**
      * @var int
      */
-    protected $ttl = 30;
+    protected $ttl;
 
     /**
      * @var bool
