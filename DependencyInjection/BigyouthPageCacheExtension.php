@@ -40,14 +40,16 @@ class BigyouthPageCacheExtension extends Extension
      */
     private function buildService($config, ContainerBuilder $container)
     {
-        $default = $config['default'];
 
         $pageCacheService          = new Definition(PageCacheService::class);
         $pageCacheServiceArguments = array(
-            $default['enabled'],
-            $default['ttl'],
-            $default['exclude'],
-            $default['type'],
+            $config['enabled'],
+            $config['ttl'],
+            $config['exclude'],
+            $config['type'],
+            $config['redis_host'],
+            $config['redis_port'],
+            $config['type'],
             $container->getParameter('kernel.cache_dir') . '/../by_cache'
         );
         $pageCacheService->setArguments($pageCacheServiceArguments);

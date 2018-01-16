@@ -22,16 +22,13 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->arrayNode('default')
-                    ->cannotBeEmpty()
-                    ->children()
-                        ->booleanNode('enabled')->end()
-                        ->integerNode('ttl')->end()
-                        ->scalarNode('type')->end()
-                        ->arrayNode('exclude')
-                            ->prototype('scalar')->end()
-                        ->end()
-                    ->end()
+                ->booleanNode('enabled')->defaultFalse()->end()
+                ->integerNode('ttl')->defaultValue(300)->end()
+                ->scalarNode('type')->defaultValue('filesystem')->end()
+                ->scalarNode('redis_host')->defaultValue('localhost')->end()
+                ->scalarNode('redis_port')->defaultValue('6379')->end()
+                ->arrayNode('exclude')
+                    ->prototype('scalar')->end()
                 ->end()
             ->end()
         ;
