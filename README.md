@@ -23,7 +23,7 @@ composer require bigyouth/page-cache-bundle
 
 ### Register the bundle
 
-Then, enable the bundle by adding it to the bundles array of the registerBundles method in your project's app/AppKernel.php file :
+Enable the bundle by adding it to the bundles array of the registerBundles method in your project's app/AppKernel.php file :
 
 ```php
 <?php
@@ -127,14 +127,10 @@ To use the **BigyouthPageCacheBundle**, your controller must extend the PageCach
 
 ```php
 <?php
+
 // ...
 
-/**
-* Class PageController
-*
-* @package Bigyouth\FrontBundle\Controller
-*/
-class PageController extends PageCacheController
+class AcmeController extends PageCacheController
 {
 
         // ...
