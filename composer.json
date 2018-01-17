@@ -1,7 +1,7 @@
 {
     "name": "bigyouth/page-cache-bundle",
-    "license": "Bigyouth",
-    "type": "project",
+    "license": "MIT",
+    "type": "library",
     "authors": [
         {
             "name": "Alexis Smadja",
@@ -17,7 +17,7 @@
             "Bigyouth\\BigyouthPageCacheBundle": ""
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "target-dir": "Bigyouth/BigyouthPageCacheBundle",
     "extra": {
         "branch-alias": {
