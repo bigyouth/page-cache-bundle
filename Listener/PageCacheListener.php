@@ -16,7 +16,6 @@ use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
-
 /**
  * Class PageCacheListener
  */
@@ -51,15 +50,12 @@ class PageCacheListener implements EventSubscriberInterface
     {
         $request = $event->getRequest();
 
-        if($this->cacheService->isEnabled() && $event->getRequestType() == 1)
-        {
-            if(!$this->cacheService->isExclude($request) && (!$this->tokenStorage->getToken() || $this->tokenStorage->getToken()->getUser() == 'anon.'))
-            {
+        if ($this->cacheService->isEnabled() && $event->getRequestType() == 1) {
+            if (!$this->cacheService->isExclude($request) && (!$this->tokenStorage->getToken() || $this->tokenStorage->getToken()->getUser() == 'anon.')) {
                 /** @var TagAwareAdapter $cache */
                 $cache = $this->cacheService->getAdapter();
 
-                if($request->getMethod() == 'GET')
-                {
+                if ($request->getMethod() == 'GET') {
                     $cacheKey = $this->cacheService->getCacheKey($request);
 
                     $data = $cache->getItem($cacheKey);
