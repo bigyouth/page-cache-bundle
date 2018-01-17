@@ -1,5 +1,5 @@
 
-# Bigyouth Page CacheBundle
+# Big Youth Page Cache Bundle
 
 ## What is it ?
 
@@ -7,8 +7,8 @@ This bundle provides a simple page caching solution working as a in-app reverse 
 
 ## Requirements
 ```yml
-    "php": "^5.3.9|^7.0",
-    "symfony/cache": "^3.1"
+"php": "^5.3.9|^7.0",
+"symfony/cache": "^3.1"
 ```    
     
 ## Installation
@@ -16,9 +16,10 @@ This bundle provides a simple page caching solution working as a in-app reverse 
 ### Download the bundle
 
 Download composer at https://getcomposer.org/download/
+
 ```bash
 composer require bigyouth/page-cache-bundle
-``
+```
 
 ### Register the bundle
 
