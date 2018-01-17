@@ -3,7 +3,7 @@
 
 ## What is it ?
 
-This bundle provides a simple page caching solution working as a in-app reverse proxy.
+This bundle provides a simple page caching solution working as an in-app reverse proxy.
 
 ## Requirements
 ```yml
