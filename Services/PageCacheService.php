@@ -136,7 +136,6 @@ class PageCacheService
         $params = [];
 
         foreach ($request->query->all() as $key => $value) {
-
             if (is_array($value)) {
                 $params[] = $key;
                 foreach ($value as $k => $v) {
@@ -213,6 +212,5 @@ class PageCacheService
         } else {
             return explode('/', substr($path, 1));
         }
-
     }
 }

@@ -1,13 +1,11 @@
 <?php
-
+namespace Bigyouth\BigyouthPageCacheBundle\Controller;
 
 /**
  * Controller
  *
  * @author Alexis Smadja <alexis.smadja@bigyouth.fr>
  */
-
-namespace Bigyouth\BigyouthPageCacheBundle\Controller;
 
 use Bigyouth\BigyouthPageCacheBundle\Services\PageCacheService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

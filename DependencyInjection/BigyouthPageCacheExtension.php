@@ -1,5 +1,4 @@
 <?php
-
 namespace Bigyouth\BigyouthPageCacheBundle\DependencyInjection;
 
 use Bigyouth\BigyouthPageCacheBundle\Listener\PageCacheListener;
@@ -40,7 +39,6 @@ class BigyouthPageCacheExtension extends Extension
      */
     private function buildService($config, ContainerBuilder $container)
     {
-
         $pageCacheService          = new Definition(PageCacheService::class);
         $pageCacheServiceArguments = array(
             $config['enabled'],
