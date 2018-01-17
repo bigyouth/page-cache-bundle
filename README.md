@@ -1,8 +1,9 @@
+
 # BigyouthPageCacheBundle
 
 ## What is it ?
 
-This bundle provides a simple page caching solution working as a in-app reverse proxy
+This bundle provides a simple page caching solution working as a in-app reverse proxy.
 
 ## Requirements
 
@@ -15,11 +16,11 @@ This bundle provides a simple page caching solution working as a in-app reverse 
 
 Download composer at https://getcomposer.org/download/
 
-    composer require bigyouth/page-cache-bundle 0.*
+    composer require bigyouth/page-cache-bundle 0.1.*
 
 ### Register the bundle
 
-Then, enable the bundle by adding it to the bundles array of the registerBundles method in your project's app/AppKernel.php file:
+Then, enable the bundle by adding it to the bundles array of the registerBundles method in your project's app/AppKernel.php file :
 
     <?php
     
@@ -31,11 +32,11 @@ Then, enable the bundle by adding it to the bundles array of the registerBundles
     {
 	    public function registerBundles()
 		{
-	        $bundles = array(
+	        $bundles = [
 	            // ...
 
 	            new Bigyouth\BigyouthPageCacheBundle\BigyouthPageCacheBundle(),
-	        );
+	        ];
 
 	        // ...
 	    }
@@ -60,19 +61,19 @@ Here is the default bundle configuration :
 ### enabled
 *default : **false***
 
-Set to **true** to enable the bundle 
+Set to **true** to enable the bundle.
 
 ### ttl
 *default : **300***
 
-Cache lifetime. This value varies by +5%/-5% to avoid multiple caches to expire at the same time
+Cache lifetime. This value varies by +5%/-5% to avoid multiple caches to expire at the same time.
 
 ### type
 *default: **filesystem***
 
-Two value can be set for this parameter : **filesystem** and **redis**
+Two value can be set for this parameter : **filesystem** and **redis**.
 
-If you use filesystem, the cache will be written in the cache folder : *var/cache/by_cache*
+If you use filesystem, the cache will be written in the cache folder : *var/cache/by_cache*.
 
 ### exclude
 *default : **empty array***
@@ -88,24 +89,24 @@ ex :
       - "logout"
       - "login_check"
 
-Every url that contains one of the terms above will not be processed by PageCacheBundle
+Every url that contains one of the terms above will not be processed by the **BigyouthPageCacheBundle**.
 
 ### redis_host
 *default : **localhost***
 
-Redis host. This parameter is only used when the *type* parameter is setted to **redis** 
+Redis host. This parameter is only used when the *type* parameter is setted to **redis**.
 
 ### redis_port
 *default : **6379***
 
-Redis port. This parameter is only used when the *type* parameter is setted to **redis** 
+Redis port. This parameter is only used when the *type* parameter is setted to **redis**.
 
 
 ## Usage
 
 ### Caching
 
-To use the PageCacheBundle, your controller must extend the PageCacheController.php class and use the *render* function :
+To use the **BigyouthPageCacheBundle**, your controller must extend the PageCacheController.php class and use the *render* function :
 
     <?php
     // ...
@@ -133,7 +134,7 @@ The PageCacheController rewrites the *render* function to manage and render cach
 
 ### Cache invalidation
 
-The PageCacheBundle uses [cache tags](https://symfony.com/blog/new-in-symfony-3-2-tagged-cache) to identify your cache data. The tags are defined by the url scheme of the cached page.
+The **BigyouthPageCacheBundle** uses [cache tags](https://symfony.com/blog/new-in-symfony-3-2-tagged-cache) to identify your cache data. The tags are defined by the url scheme of the cached page.
 
 For example, the page behind */products/list/my-product* will be tagged with **products**, **list** and **my-product**.
 
@@ -155,3 +156,8 @@ or if you want to invalidate all product pages :
 	$this->get('by.page_cache')->invalidate(["products"]);
 	
 	// ...
+	
+----------
+
+
+*author : [Alexis Smadja](mailto:alexis.smadja@bigyouth.fr)*
