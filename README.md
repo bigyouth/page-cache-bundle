@@ -22,6 +22,7 @@ Download composer at https://getcomposer.org/download/
 
 Then, enable the bundle by adding it to the bundles array of the registerBundles method in your project's app/AppKernel.php file :
 
+```php
     <?php
     
     # app/AppKernel.php
@@ -43,7 +44,7 @@ Then, enable the bundle by adding it to the bundles array of the registerBundles
 
 	    // ...
 	}
-
+```
 
 
 ## Configuration
@@ -158,6 +159,3 @@ or if you want to invalidate all product pages :
 	// ...
 	
 ----------
-
-
-*author : [Alexis Smadja](mailto:alexis.smadja@bigyouth.fr)*
