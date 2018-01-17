@@ -172,7 +172,11 @@ $this->get('by.page_cache')->invalidate(["products"]);
 
 // ...
 ```
+## Authors
 
+* **Alexis Smadja** - *Initial work* - [Alxss](https://github.com/Alxss)
+
+See also the list of [contributors](https://github.com/BigYouth/page-cache-bundle/graphs/contributors) who participated in this project.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
