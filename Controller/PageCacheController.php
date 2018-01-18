@@ -1,4 +1,5 @@
 <?php
+
 namespace Bigyouth\BigyouthPageCacheBundle\Controller;
 
 /**
@@ -14,8 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class PageCacheController
- *
- * @package BigyouthPageCacheBundle\Controller
+ * @package Bigyouth\BigyouthPageCacheBundle\Controller
  */
 class PageCacheController extends Controller
 {
