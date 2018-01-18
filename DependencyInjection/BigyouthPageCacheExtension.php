@@ -1,7 +1,6 @@
 <?php
 namespace Bigyouth\BigyouthPageCacheBundle\DependencyInjection;
 
-use Bigyouth\BigyouthPageCacheBundle\Listener\PageCacheListener;
 use Bigyouth\BigyouthPageCacheBundle\Services\PageCacheService;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
