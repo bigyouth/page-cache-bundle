@@ -3,7 +3,7 @@
 
 |       Style-CI        |        Downloads         |         Release        |
 |:----------------------:|:-----------------------:|:-----------------------:
-| [![Style CI](https://styleci.io/repos/117823873/shield)](https://styleci.io/repos/117823873) | [![Downloads](https://img.shields.io/packagist/dt/bigyouth/page-cache-bundle.svg?style=flat-square)](https://packagist.org/packages/bigyouth/page-cache-bundle) | [![Release](https://img.shields.io/packagist/v/symfony/symfony.svg?style=flat-square)](https://packagist.org/packages/bigyouth/page-cache-bundle) | 
+| [![Style CI](https://styleci.io/repos/117823873/shield)](https://styleci.io/repos/117823873) | [![Downloads](https://img.shields.io/packagist/dt/bigyouth/page-cache-bundle.svg?style=flat-square)](https://packagist.org/packages/bigyouth/page-cache-bundle) | [![Release](https://img.shields.io/packagist/v/bigyouth/page-cache-bundle.svg?style=flat-square)](https://packagist.org/packages/bigyouth/page-cache-bundle) | 
 
 ## What is it ?
 
