@@ -3,7 +3,7 @@
 
 |     Maintainability    |         Issues          |        Downloads        |         Release         |
 |:----------------------:|:-----------------------:|:-----------------------:|:-----------------------:|
- [![Maintainability](https://img.shields.io/codeclimate/maintainability/bigyouth/page-cache-bundle.svg](https://codeclimate.com/github/bigyouth/page-cache-bundle) | [![Issues](https://img.shields.io/codeclimate/issues/github/bigyouth/page-cache-bundle.svg](https://codeclimate.com/github/bigyouth/page-cache-bundle) | [![Downloads](https://img.shields.io/packagist/dt/bigyouth/page-cache-bundle.svg?style=flat-square)](https://packagist.org/packages/bigyouth/page-cache-bundle) | [![Release](https://img.shields.io/packagist/v/bigyouth/page-cache-bundle.svg?style=flat-square)](https://packagist.org/packages/bigyouth/page-cache-bundle) | 
+ [![Maintainability](https://img.shields.io/codeclimate/maintainability/bigyouth/page-cache-bundle.svg)](https://codeclimate.com/github/bigyouth/page-cache-bundle) | [![Issues](https://img.shields.io/codeclimate/issues/github/bigyouth/page-cache-bundle.svg)](https://codeclimate.com/github/bigyouth/page-cache-bundle) | [![Downloads](https://img.shields.io/packagist/dt/bigyouth/page-cache-bundle.svg?style=flat-square)](https://packagist.org/packages/bigyouth/page-cache-bundle) | [![Release](https://img.shields.io/packagist/v/bigyouth/page-cache-bundle.svg?style=flat-square)](https://packagist.org/packages/bigyouth/page-cache-bundle) | 
 
 ## What is it ?
 
