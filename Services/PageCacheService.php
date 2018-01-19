@@ -79,29 +79,32 @@ class PageCacheService
         $this->redis_host = $redis_host;
         $this->redis_port = $redis_port;
         $this->cacheDir   = $cacheDir;
+
         $this->setAdapter();
     }
 
     /**
-     *
+     * @return void
      */
     public function setAdapter()
     {
         switch ($this->type) {
             case 'redis':
-                $redisConnection = RedisAdapter::createConnection('redis://'. $this->redis_host . ':' . $this->redis_port);
-                $adapter         = new RedisAdapter(
+                $redisDsn        = 'redis://' . $this->redis_host . ':' . $this->redis_port;
+                $redisConnection = RedisAdapter::createConnection($redisDsn);
+
+                $adapter = new RedisAdapter(
                     $redisConnection,
-                    $namespace = 'bigyouth',
-                    $defaultLifetime = $this->ttl
+                    'bigyouth',
+                    $this->ttl
                 );
                 break;
             case 'filesystem':
             default:
                 $adapter = new FilesystemAdapter(
-                    $namespace = 'bigyouth',
-                    $defaultLifetime = $this->ttl,
-                    $directory = $this->cacheDir
+                    'bigyouth',
+                    $this->ttl,
+                    $this->cacheDir
                 );
                 break;
         }
@@ -120,7 +123,7 @@ class PageCacheService
     }
 
     /**
-     * @param $request
+     * @param Request $request
      * @return string
      */
     public function getCacheKey(Request $request)
@@ -131,7 +134,6 @@ class PageCacheService
             $cacheKey = explode('/', substr($request->getPathInfo(), 1));
             $cacheKey = implode(':', $cacheKey);
         }
-
 
         $params = [];
 
@@ -155,7 +157,7 @@ class PageCacheService
     }
 
     /**
-     *
+     * @return TagAwareAdapter
      */
     public function getAdapter()
     {
@@ -163,7 +165,7 @@ class PageCacheService
     }
 
     /**
-     *
+     * @return array|int
      */
     public function getExcludeUrls()
     {
@@ -172,7 +174,7 @@ class PageCacheService
 
     /**
      * @param Request $request
-     * @return array|int
+     * @return bool
      */
     public function isExclude(Request $request)
     {

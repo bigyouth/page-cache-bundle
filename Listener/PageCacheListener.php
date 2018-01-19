@@ -44,14 +44,14 @@ class PageCacheListener implements EventSubscriberInterface
 
     /**
      * @param GetResponseEvent $event
-     * @return Response
      */
     public function onKernelRequest(GetResponseEvent $event)
     {
         $request = $event->getRequest();
 
         if ($this->cacheService->isEnabled() && $event->getRequestType() == 1) {
-            if (!$this->cacheService->isExclude($request) && (!$this->tokenStorage->getToken() || $this->tokenStorage->getToken()->getUser() == 'anon.')) {
+            if (!$this->cacheService->isExclude($request) && (!$this->tokenStorage->getToken()
+                    || $this->tokenStorage->getToken()->getUser() == 'anon.')) {
                 /** @var TagAwareAdapter $cache */
                 $cache = $this->cacheService->getAdapter();
 

@@ -39,7 +39,8 @@ class PageCacheController extends Controller
 
         $this->cacheService = $this->get('by.page_cache');
 
-        if ($this->getUser() || $request->getMethod() != 'GET' || !$this->cacheService->isEnabled() || $this->cacheService->isExclude($request)) {
+        if ($this->getUser() || $request->getMethod() != 'GET' || !$this->cacheService->isEnabled()
+            || $this->cacheService->isExclude($request)) {
             return parent::render($view, $parameters, $response);
         }
 

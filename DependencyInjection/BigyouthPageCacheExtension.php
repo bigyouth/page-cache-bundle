@@ -10,9 +10,8 @@ use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
 /**
- * This is the class that loads and manages your bundle configuration
- *
- * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
+ * Class BigyouthPageCacheExtension
+ * @package Bigyouth\BigyouthPageCacheBundle\DependencyInjection
  */
 class BigyouthPageCacheExtension extends Extension
 {
